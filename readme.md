@@ -1,6 +1,6 @@
 ## Deploy Django using Nginx and Postgresql
 
-An example project from this tutorial: ruddra.com/2016/08/14/docker-django-nginx-postgres/
+An example project from this tutorial: http://ruddra.com/2016/08/14/docker-django-nginx-postgres/
 
 To use this project, run this commands:
 
