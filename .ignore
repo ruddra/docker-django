@@ -1,1 +1,7 @@
 *.pyc
+*.cpython.pyc
+/__pycache__/
+*/__pycache__/*
+/__pychache__/*
+src
+*.idea

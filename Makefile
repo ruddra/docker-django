@@ -1,3 +1,5 @@
+include app.conf
+
 build:
 	docker-compose build
 
@@ -14,16 +16,19 @@ shell-nginx:
 	docker exec -ti nginx bash
 
 shell-web:
-	docker exec -ti web bash
+	docker exec -ti dg01 bash
 
 shell-db:
 	docker exec -ti db bash
 
 log-nginx:
-	docker-compose logs nginx  
+	docker-compose logs -f nginx  
 
 log-web:
-	docker-compose logs web  
+	docker-compose logs -f web  
 
 log-db:
-	docker-compose logs db  
+	docker-compose logs -f db
+
+clone:
+	rm -rf src; git clone $(gitrepo) src

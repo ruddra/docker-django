@@ -2,7 +2,7 @@ version: '2'
 services:  
   nginx:
     image: nginx:latest
-    container_name: ng01
+    container_name: nx01
     ports:
       - "8000:8000"
     volumes:
@@ -13,7 +13,7 @@ services:
   web:
     build: .
     container_name: dg01
-    command: bash -c "python manage.py makemigrations && python manage.py migrate && gunicorn mydjango.wsgi -b 0.0.0.0:8000"
+    command: bash -c "python manage.py makemigrations && python manage.py migrate && gunicorn mydjango.wsgi -b 0.0.0.0:8000"  # rename mydjango to your django project name
     depends_on:
       - db
     volumes:
@@ -23,4 +23,4 @@ services:
 
   db:
     image: postgres:latest
-    container_name: ps01
+    container_name: pq01

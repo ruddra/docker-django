@@ -14,3 +14,8 @@ To use this project, run this commands:
 8. `make logs-web` to log access web container.
 9. `make logs-db` to log access db container.
 10. `make logs-nginx` to log access nginx container.
+
+
+### Updates:
+1. Update `app.conf` with your git repository you want to use.
+2. change in docker-compose.yml. Put your project name in the web container's command.  
