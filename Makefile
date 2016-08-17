@@ -31,4 +31,4 @@ log-db:
 	docker-compose logs -f db
 
 clone:
-	rm -rf src; git clone $(gitrepo) src
+	git clone $(gitrepo) src
