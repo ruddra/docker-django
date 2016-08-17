@@ -2,6 +2,8 @@
 
 An example project from this tutorial: http://ruddra.com/2016/08/14/docker-django-nginx-postgres/
 
+First run `make clone` to clone your project. See updates section for cloning repo.
+
 To use this project, run this commands:
 
 1. `make up` to build the project and starting containers.
