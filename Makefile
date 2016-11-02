@@ -11,13 +11,13 @@ stop:
 	docker-compose stop
 
 shell-nginx:
-	docker exec -ti nginx bash
+	docker exec -ti ng01 bash
 
 shell-web:
-	docker exec -ti web bash
+	docker exec -ti dg01 bash
 
 shell-db:
-	docker exec -ti db bash
+	docker exec -ti ps01 bash
 
 log-nginx:
 	docker-compose logs nginx  
@@ -26,4 +26,7 @@ log-web:
 	docker-compose logs web  
 
 log-db:
-	docker-compose logs db  
+	docker-compose logs db 
+
+collectstatic:
+	docker exec dg01 /bin/sh -c "python manage.py collectstatic --noinput"  

@@ -8,6 +8,7 @@ services:
     volumes:
       - ./src:/src
       - ./config/nginx:/etc/nginx/conf.d
+      - /static:/static
     depends_on:
       - web
   web:
@@ -18,6 +19,7 @@ services:
       - db
     volumes:
       - ./src:/src
+      - /static:/static
     expose:
       - "8000"
 

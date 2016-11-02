@@ -14,3 +14,4 @@ To use this project, run this commands:
 8. `make logs-web` to log access web container.
 9. `make logs-db` to log access db container.
 10. `make logs-nginx` to log access nginx container.
+11. `make collectstatic` to put static files in static directory.
