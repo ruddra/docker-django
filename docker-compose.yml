@@ -2,7 +2,7 @@ version: '2'
 services:  
   nginx:
     image: nginx:latest
-    container_name: ng01
+    container_name: nz01
     ports:
       - "8000:8000"
     volumes:
@@ -13,8 +13,8 @@ services:
       - web
   web:
     build: .
-    container_name: dg01
-    command: bash -c "python manage.py makemigrations && python manage.py migrate && gunicorn mydjango.wsgi -b 0.0.0.0:8000"
+    container_name: dz01
+    command: bash -c 'python manage.py makemigrations && python manage.py migrate && gunicorn mydjango.wsgi 0.0.0.0:8001'
     depends_on:
       - db
     volumes:
@@ -22,7 +22,25 @@ services:
       - /static:/static
     expose:
       - "8000"
+    links:
+      - redis
 
   db:
     image: postgres:latest
-    container_name: ps01
+    container_name: pz01
+
+  redis:
+    image: redis:latest
+    container_name: rz01
+    ports:
+     - '6379:6379'
+
+  celery:
+    build: .
+    container_name: cz01
+    command: celery worker --app=utility.tasks
+    volumes:
+      - ..:/src
+    links:
+      - db
+      - redis

@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'myapp.apps.MyappConfig',
+    'celery',
 ]
 
 MIDDLEWARE = [
@@ -121,3 +123,18 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
 STATIC_URL = '/static/'
+
+CELERY_BROKER_URL = 'redis://redis:6379/0'
+CELERY_RESULT_BACKEND = 'redis://redis:6379/0'
+
+SEND_ME_EMAIL = 'you@gmail.com'
+
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'test@gmail.com'
+EMAIL_HOST_PASSWORD = '**********'
+EMAIL_FROM_ADDRESS = 'test@gmail.com'
+
+from myapp.tasks import send_email
+send_email(SEND_ME_EMAIL,EMAIL_HOST_USER, "Hello from Docker", "Hello From Docker")
