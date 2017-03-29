@@ -16,7 +16,7 @@ To use this project, run this commands:
 10. `make logs-nginx` to log access nginx container.
 11. `make collectstatic` to put static files in static directory.
 
-##Relevent Blogs:
+## Relevent Blogs:
 1. <a href="http://ruddra.com/2016/08/14/docker-django-nginx-postgres/">Deploy Django, Gunicorn, NGINX, Postgresql using Docker</a>
 2. <a href="http://ruddra.com/2016/11/02/serve-static-files-by-nginx-from-django-using-docker/">Serve Static Files by Nginx from Django using Docker</a>
 3. <a href="http://ruddra.com/2016/11/14/docker-do-stuff-using-celery-using-redis-as-broker/">Docker: Use Celery in Django(Redis as Broker)</a>
