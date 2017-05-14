@@ -14,7 +14,6 @@ services:
   web:
     build: .
     container_name: dz01
-    command: bash -c 'python manage.py makemigrations && python manage.py migrate && gunicorn mydjango.wsgi -b 0.0.0.0:8000'
     depends_on:
       - db
     volumes:
