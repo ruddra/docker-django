@@ -10,6 +10,9 @@ start:
 stop:
 	docker-compose stop
 
+restart:
+	docker-compose stop && docker-compose start
+
 shell-nginx:
 	docker exec -ti ng01 bash
 
