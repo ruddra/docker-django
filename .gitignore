@@ -1,7 +1,10 @@
 *.pyc
 .idea
+.vscode
 */*.pyc
 */*/*.pyc
 */migrations/*
+./src/static/*
 /__pycache__
 src/mydjango/__pycache__/settings.cpython-35.pyc
+*/static/
