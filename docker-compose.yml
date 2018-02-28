@@ -31,13 +31,3 @@ services:
     container_name: rz01
     ports:
      - '6379:6379'
-
-  celery:
-    build: .
-    container_name: cz01
-    command: celery worker --app=utility.tasks
-    volumes:
-      - ..:/src
-    links:
-      - db
-      - redis
