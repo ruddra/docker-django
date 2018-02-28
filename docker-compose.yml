@@ -8,18 +8,15 @@ services:
     volumes:
       - ./src:/src
       - ./config/nginx:/etc/nginx/conf.d
-      - /static:/static
     depends_on:
       - web
   web:
     build: .
     container_name: dz01
-    command: bash -c 'python manage.py makemigrations && python manage.py migrate && gunicorn mydjango.wsgi -b 0.0.0.0:8000'
     depends_on:
       - db
     volumes:
       - ./src:/src
-      - /static:/static
     expose:
       - "8000"
     links:

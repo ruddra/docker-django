@@ -25,7 +25,7 @@ SECRET_KEY = '-au3&glnt&h(g^!s$rjjgh6szj=$(wxnelw2uiw+6^83+5ab^#'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['web']
 
 
 # Application definition
@@ -56,7 +56,9 @@ ROOT_URLCONF = 'mydjango.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            './templates'
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -123,18 +125,44 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
 STATIC_URL = '/static/'
+MEDIA_URL = '/media/'
+
 
 CELERY_BROKER_URL = 'redis://redis:6379/0'
 CELERY_RESULT_BACKEND = 'redis://redis:6379/0'
 
-SEND_ME_EMAIL = 'you@gmail.com'
+STATIC_ROOT = './static/'
+MEDIA_ROOT = '/media/'
 
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'test@gmail.com'
-EMAIL_HOST_PASSWORD = '**********'
-EMAIL_FROM_ADDRESS = 'test@gmail.com'
 
-from myapp.tasks import send_email
-send_email(SEND_ME_EMAIL,EMAIL_HOST_USER, "Hello from Docker", "Hello From Docker")
+import os
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['console'],
+            'level': os.getenv('DJANGO_LOG_LEVEL', 'INFO'),
+        },
+        'celery': {
+            'handlers': ['console'],
+            'level': os.getenv('DJANGO_LOG_LEVEL', 'INFO'),
+        },
+    },
+}
+
+# ---------------- Local Settings ---------------------------------------
+# Put your local settings in mydjango directory to override this settings
+# File name should be local_settings.py
+try:
+    from .local_settings import *
+except ImportError:
+    print('No Local Settings Found')
+
+# ---------------- End Local Settings ------------------------------------

@@ -15,6 +15,11 @@ To use this project, run this commands:
 9. `make logs-db` to log access db container.
 10. `make logs-nginx` to log access nginx container.
 11. `make collectstatic` to put static files in static directory.
+12. `make log-web` to log access web container.
+13. `make log-db` to log access db container.
+14. `make log-nginx` to log access nginx container.
+14. `make restart` to restart containers.
+
 
 ## Relevent Blogs:
 1. <a href="http://ruddra.com/2016/08/14/docker-django-nginx-postgres/">Deploy Django, Gunicorn, NGINX, Postgresql using Docker</a>
