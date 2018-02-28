@@ -32,7 +32,7 @@ log-web:
 	docker-compose logs web  
 
 log-db:
-	docker-compose logs db 
+	docker-compose logs db
 
 collectstatic:
 	docker exec dz01 /bin/sh -c "python manage.py collectstatic --noinput"  
