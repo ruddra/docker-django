@@ -1,6 +1,8 @@
 ## Deploy Django using Nginx and Postgresql
 
-An example project from this tutorial: http://ruddra.com/2016/08/14/docker-django-nginx-postgres/. It also contains implementation from this blog too: http://ruddra.com/2016/11/02/serve-static-files-by-nginx-from-django-using-docker/
+An example project from this tutorial: http://ruddra.com/2016/08/14/docker-django-nginx-postgres/. It also contains implementation from these blogs as well:
+1. http://ruddra.com/2016/11/02/serve-static-files-by-nginx-from-django-using-docker/
+2. http://ruddra.com/2016/11/14/docker-do-stuff-using-celery-using-redis-as-broker/
 
 To use this project, run this commands:
 
