@@ -24,7 +24,6 @@ services:
   db:
     image: postgres:latest
     container_name: pz01
-
   redis:
     image: redis:latest
     container_name: rz01
