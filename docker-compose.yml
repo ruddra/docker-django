@@ -21,7 +21,6 @@ services:
       - "8000"
     links:
       - redis
-
   db:
     image: postgres:latest
     container_name: pz01
