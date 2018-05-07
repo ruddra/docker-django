@@ -1,4 +1,4 @@
-## Deploy Django using Nginx,Celery, Redis and Postgresql
+## Deploy Django using Nginx, Celery, Redis and Postgresql
 
 An example project from these tutorial:
 1. <a href="http://ruddra.com/2016/08/14/docker-django-nginx-postgres/">Deploy Django, Gunicorn, NGINX, Postgresql using Docker</a>
