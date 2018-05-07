@@ -4,6 +4,20 @@ An example project from this tutorial: http://ruddra.com/2016/08/14/docker-djang
 1. http://ruddra.com/2016/11/02/serve-static-files-by-nginx-from-django-using-docker/
 2. http://ruddra.com/2016/11/14/docker-do-stuff-using-celery-using-redis-as-broker/
 
+### Basic Usage
+1. First run `make build` inside root directory.
+2. Then run `make up` to start up the project for first time.
+
+### Preview
+A default Django project resides in `src` directory. So, when you start the project, you will see the following screen in `8000` port:
+
+![Demo One]()
+
+Also when you access the django container log via `make log-web`, you will see the following:
+
+![Demo Two]()
+
+### Commands
 To use this project, run this commands:
 
 1. `make up` to build the project and starting containers.
