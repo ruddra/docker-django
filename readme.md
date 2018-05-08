@@ -10,7 +10,7 @@ Where it is described how this boilerplate was created from scratch so that you 
 1. First run `make build` inside root directory.
 2. Then run `make up` to start up the project for first time.
 
-Checkout the commands section for more usage.
+Checkout the [commands](https://github.com/ruddra/docker-django#commands) section for more usage.
 
 ### Preview
 A default Django project resides in `src` directory. So, when you start the project, you will see the following screen in `8000` port:
