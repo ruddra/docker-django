@@ -1,4 +1,4 @@
-## Deploy Django using Nginx, Celery, Redis and Postgresql
+## Deploy Django using Nginx, Celery, Redis and Postgresql with Docker
 A boilerplate to deploy Django with cool stuff. Also serves as an example project from these tutorial:
 1. <a href="https://ruddra.com/2016/08/14/docker-django-nginx-postgres/">Deploy Django, Gunicorn, NGINX, Postgresql using Docker</a>
 2. <a href="https://ruddra.com/2016/11/02/serve-static-files-by-nginx-from-django-using-docker/">Serve Static Files by Nginx from Django using Docker</a>
