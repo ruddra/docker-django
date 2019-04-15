@@ -8,3 +8,6 @@
 /__pycache__
 src/mydjango/__pycache__/settings.cpython-35.pyc
 */static/
+.DS_Store
+.env
+**/.DS_Store
