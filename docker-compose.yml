@@ -1,7 +1,7 @@
 version: '2'  
 services:  
   nginx:
-    image: nginx:latest
+    image: nginx:alpine
     container_name: nz01
     ports:
       - "8000:8000"
@@ -22,10 +22,10 @@ services:
     links:
       - redis
   db:
-    image: postgres:latest
+    image: postgres:alpine
     container_name: pz01
   redis:
-    image: redis:latest
+    image: redis:alpine
     container_name: rz01
     ports:
      - '6379:6379'
