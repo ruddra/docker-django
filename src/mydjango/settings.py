@@ -129,7 +129,7 @@ CELERY_BROKER_URL = 'redis://redis:6379/0'
 CELERY_RESULT_BACKEND = 'redis://redis:6379/0'
 
 STATIC_ROOT = './static/'
-MEDIA_ROOT = '/media/'
+MEDIA_ROOT = './media/'
 
 LOGGING = {
     'version': 1,
