@@ -4,6 +4,8 @@ celery==4.3.0
 Django==2.2.1
 gunicorn==19.9.0
 kombu==4.5.0
+pillow==6.2.1
+psycopg2==2.8.4
 pytz==2019.1
 redis==3.2.1
 sqlparse==0.3.0
