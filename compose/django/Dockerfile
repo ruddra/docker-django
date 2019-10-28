@@ -1,3 +1,4 @@
+# More Datascience frendly gist can be found here: https://gist.github.com/ruddra/870d7a51238ddfa4b50375086c12a4f5
 # pull official python alpine image
 FROM python:3.7-alpine
 
@@ -16,10 +17,10 @@ WORKDIR /src
 RUN apk update && apk add --no-cache \
     postgresql \
     zlib \
-    jpeg \
-    # comment out the following two packages if you don't want to add library like pandas, scipy and numpy
-    openblas \ 
-    libstdc++ 
+    jpeg 
+# un-comment the following two dependecies if you want to add library like pandas, scipy and numpy
+# openblas \ 
+# libstdc++ 
 
 # Installing temporary packages required for installing requirements.pip 
 RUN apk add --no-cache --virtual build-deps \
@@ -28,11 +29,12 @@ RUN apk add --no-cache --virtual build-deps \
     musl-dev \
     postgresql-dev\
     zlib-dev \
-    jpeg-dev \
-    # comment out if you don't want to install numpy, pandas, scipy etc
-    g++ \
-    openblas-dev \
-    cmake 
+    jpeg-dev 
+# un-comment if you want to install numpy, pandas, scipy etc and their supported dependencies
+# g++ \
+# openblas-dev \
+# cmake \
+# && ln -s /usr/include/locale.h /usr/include/xlocale.h
 
 # Update pip
 RUN pip install --upgrade pip
