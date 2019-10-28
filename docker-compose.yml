@@ -1,5 +1,10 @@
-version: '2'  
-services:  
+version: "3"
+
+volumes:
+  local_postgres_data: {}
+  local_postgres_data_backups: {}
+
+services:
   nginx:
     image: nginx:alpine
     container_name: nz01
@@ -10,8 +15,11 @@ services:
       - ./config/nginx:/etc/nginx/conf.d
     depends_on:
       - web
+
   web:
-    build: .
+    build:
+      context: .
+      dockerfile: compose/django/Dockerfile
     container_name: dz01
     depends_on:
       - db
@@ -21,11 +29,22 @@ services:
       - "8000"
     links:
       - redis
+    env_file:
+      - ./.envs/.django
+
   db:
-    image: postgres:alpine
+    build:
+      context: .
+      dockerfile: compose/postgres/Dockerfile
     container_name: pz01
+    env_file:
+      - ./.envs/.postgres
+    volumes:
+      - local_postgres_data:/var/lib/postgresql/data
+      - local_postgres_data_backups:/backups
+
   redis:
     image: redis:alpine
     container_name: rz01
     ports:
-     - '6379:6379'
+      - "6379:6379"

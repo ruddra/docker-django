@@ -23,8 +23,19 @@
         <p>Redis was used as broker for Celery.</p>
 
         <p class="lead">Enjoy your boilerplate for Django(with celery, postgresql and redis) and Docker.</p>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        {% if demo_content.exists %}
+        <h2>Here are some demo contents from Demo model</h2>
+        {% for demo in demo_content %}
+        <h3>{{ demo.title }}</h3>
+        <p>{{ demo.body }}</p>
+        <img src="{{ demo.image.url }}">
+        {% endfor %}
+        {% endif %}
         </div>
 
     </center>
 </body>
+
+<footer>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</footer>
