@@ -1,6 +1,5 @@
 ## Deploy Django using Nginx, Celery, Redis and Postgresql with Docker
 
-<img class="img-center" style="max-width:300px;overflow:hidden;" src="https://ruddra.com/content/images/2019/01/docker-django.jpg" alt="Deploy Django, Gunicorn, NGINX, Postgresql using Docker">
 A boilerplate to deploy Django with cool stuff. Also serves as an example project from these tutorial:
 1. <a href="https://ruddra.com/docker-django-nginx-postgres/">Deploy Django, Gunicorn, NGINX, Postgresql using Docker</a>
 2. <a href="https://ruddra.com/serve-static-files-by-nginx-from-django-using-docker/">Serve Static Files by Nginx from Django using Docker</a>
@@ -8,7 +7,7 @@ A boilerplate to deploy Django with cool stuff. Also serves as an example projec
 
 Where it is described how this boilerplate was created from scratch so that you can build your own.
 
-## Now Featuring Numpy, Scipy, Pandas and Multiple Database
+## Now Featuring Numpy, Scipy and Pandas
 These libraries are core of data science and its nice to have it in one place. If you need them, then make sure to add them inside `requirements.pip` file.
 If they are not needed then please remove/comment out the alpine packages related to numpy, scipy and pandas from the docker file.
 

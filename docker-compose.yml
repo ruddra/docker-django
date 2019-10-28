@@ -1,4 +1,9 @@
 version: "3"
+
+volumes:
+  local_postgres_data: {}
+  local_postgres_data_backups: {}
+
 services:
   nginx:
     image: nginx:alpine
@@ -25,7 +30,7 @@ services:
     links:
       - redis
     env_file:
-      - envs/.django
+      - ./.envs/.django
 
   db:
     build:
@@ -33,7 +38,10 @@ services:
       dockerfile: compose/postgres/Dockerfile
     container_name: pz01
     env_file:
-      - envs/.postgres
+      - ./.envs/.postgres
+    volumes:
+      - local_postgres_data:/var/lib/postgresql/data
+      - local_postgres_data_backups:/backups
 
   redis:
     image: redis:alpine
