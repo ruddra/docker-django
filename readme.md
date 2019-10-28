@@ -16,7 +16,7 @@ Where it is described how this boilerplate was created from scratch so that you 
 6. Now comes with support to install [Pillow](https://pypi.org/project/Pillow/) using django.
 
 ## Now Featuring Numpy, Scipy and Pandas
-In the [**`Dockerfile`**](https://github.com/ruddra/docker-django/blob/master/compose/django/Dockerfile), there are detailed instructions on how to install datascience packages.
+In the [**`Dockerfile`**](https://github.com/ruddra/docker-django/blob/master/compose/django/Dockerfile), there are detailed instructions on how to install data science dependencies.
 
 **PS:** Here is a [*`gist`*](https://gist.github.com/ruddra/870d7a51238ddfa4b50375086c12a4f5) which is more useful for Numpy, Pandas, Scipy etc. And it is usable with this project's [`docker-compose.yml`](https://github.com/ruddra/docker-django/blob/master/docker-compose.yml) file. Just you need to replace the `Dockerfile` from [*./compose*](https://github.com/ruddra/docker-django/blob/master/compose) directory with the one given in the *gist*.
 
