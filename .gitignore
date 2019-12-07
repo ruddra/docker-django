@@ -12,3 +12,4 @@ src/mydjango/__pycache__/settings.cpython-35.pyc
 .env
 **/.DS_Store
 src/mydjango/local_settings.py
+src/media
