@@ -15,7 +15,8 @@ services:
       - ./config/nginx:/etc/nginx/conf.d
     depends_on:
       - web
-
+    networks:
+      - djangonetwork
   web:
     build:
       context: .
@@ -31,7 +32,8 @@ services:
       - redis
     env_file:
       - ./.envs/.django
-
+    networks:
+      - djangonetwork
   db:
     build:
       context: .
@@ -42,9 +44,16 @@ services:
     volumes:
       - local_postgres_data:/var/lib/postgresql/data
       - local_postgres_data_backups:/backups
-
+    networks:
+      - djangonetwork
   redis:
     image: redis:alpine
     container_name: rz01
     ports:
       - "6379:6379"
+    networks:
+      - djangonetwork
+
+networks:
+  djangonetwork:
+    driver: bridge
