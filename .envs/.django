@@ -2,4 +2,4 @@ DB_HOST=db
 DB_PORT=5432
 DB_PASSWORD=password
 DB_USER=user
-DATABASE=django_db
+DB_NAME=django_db
