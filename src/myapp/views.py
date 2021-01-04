@@ -1,3 +1,4 @@
+from django import get_version
 from django.views.generic import TemplateView
 from .tasks import show_hello_world
 from .models import DemoModel
@@ -14,4 +15,5 @@ class ShowHelloWorld(TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['demo_content'] = DemoModel.objects.all()
+        context['version'] = get_version()
         return context
