@@ -54,3 +54,10 @@ To use this project, run this commands:
 13. `make log-db` to log access db container.
 14. `make log-nginx` to log access nginx container.
 15. `make restart` to restart containers.
+
+## License
+[MIT](https://github.com/ruddra/docker-django/blob/master/LICENSE).
+
+## Contribute
+
+Feel free to fork and create PR.
