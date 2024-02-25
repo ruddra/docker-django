@@ -54,5 +54,9 @@ RUN apk del build-deps && \
     find -type d -name __pycache__ -prune -exec rm -rf {} \; && \
     rm -rf ~/.cache/pip
 
+RUN addgroup --system django && adduser --system django --ingroup django
+# COPY --from=base /opt/venv /opt/venv
+# ENV PATH="/opt/venv/bin:$PATH"
+USER django
 # CMD will run when this dockerfile is running
 CMD ["sh", "-c", "python manage.py collectstatic --no-input; python manage.py migrate; gunicorn mydjango.wsgi -b 0.0.0.0:8000 & celery --app myapp.tasks worker --loglevel=INFO"]
