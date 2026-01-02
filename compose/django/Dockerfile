@@ -1,6 +1,6 @@
 # More Datascience frendly gist can be found here: https://gist.github.com/ruddra/870d7a51238ddfa4b50375086c12a4f5
 # pull official python alpine image
-FROM python:3.7-alpine
+FROM python:3.11-alpine
 
 # Set Environment Variable
 ENV PYTHONUNBUFFERED 1
